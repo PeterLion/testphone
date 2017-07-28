@@ -1,0 +1,65 @@
+<ion-header>
+   <ion-navbar>
+      <ion-title>
+         My Favourite Technologies
+      </ion-title>
+      <ion-buttons end>
+         <button ion-button icon-only (click)="onLoadGridPage()"><ion-icon name="more"></ion-icon></button>
+      </ion-buttons>
+      
+   </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+   <ion-item>
+      <button
+         class="add"
+         ion-button
+         item-right
+         icon-right
+         margin-bottom
+         color="primary"
+         (click)="addEntry()">
+            Add a technology
+            <ion-icon name="add"></ion-icon>
+      </button>
+   </ion-item>
+
+
+   
+   <ion-grid>
+      <ion-row>
+          <ion-col col-6 *ngFor="let item of items">
+            <ion-row>
+                 <ion-col col-12>
+                   <ion-avatar item-start>
+                     <img width="100%" [src]="item.icon">
+                   </ion-avatar>
+                 </ion-col>
+            </ion-row>
+            <ion-row>
+                 <ion-col col-6>
+                   <h2>{{ item.name }} </h2>
+                 </ion-col>
+                 <ion-col col-6>
+                           <button
+                  ion-button
+                  color="primary"
+                  item-right
+                  (click)="viewEntry({ record: item })">View</button>
+                </ion-col>
+         </ion-row>
+         </ion-col>
+    </ion-row>
+   </ion-grid>
+      <!-- <h2>{{ item.name }} </h2>
+      <button
+         ion-button
+         color="primary"
+         item-right
+         (click)="viewEntry({ record: item })">View</button> -->
+   
+
+
+</ion-content>
